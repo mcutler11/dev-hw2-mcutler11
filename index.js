@@ -1223,9 +1223,15 @@ while (i < data.length) {
 }
 console.log(falseViaWhile);
 
-data.forEach(index => {
-  if (data[index].completed === false) {
-    falseViaForEach.push(data[index]);
+/**
+ * forEach() brings in each item/task in the 'Array' 1 at a time.
+ * So, unlike 'while', we are not working with any indices.
+ * Instead, we have access to the actual individual element itself.
+ * Each of these 'tasks' has a property 'completed that we can access.
+ */
+data.forEach(task => {
+  if (task.completed === false) {
+    falseViaForEach.push(task);
   }
 });
 
