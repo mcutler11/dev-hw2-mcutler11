@@ -1209,6 +1209,18 @@ const data = [
   }
 ];
 
+// The array where every object.completed has a false value.
+const falseInstances = [];
+
+let i = 0;
+
+while (i < data.length) {
+  if (data.completed === false) {
+    falseInstances.push(data[i]);
+  }
+  i += 1;
+}
+
 /**
  * Given 'data' above, perform the following tasks, logging each to the terminal.
  * 1. Use `while` to 'manually' iterate over this `Array` and count up the number of incomplete tasks - that is occurrences of `completed: false`. HINT: You will most likely need to use `if` statements.
