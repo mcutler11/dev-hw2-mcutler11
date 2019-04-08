@@ -1212,14 +1212,19 @@ const data = [
 // The array where every object.completed has a false value.
 const falseInstances = [];
 
-let i = 0;
+// let i = 0;
 
-while (i < data.length) {
+// while (i < data.length) {
+//  if (data.completed === false) {
+//    falseInstances.push(data[i]);
+//  }
+//  i += 1; }
+
+data.forEach(item => {
   if (data.completed === false) {
-    falseInstances.push(data[i]);
+    falseInstances.push(data[item]);
   }
-  i += 1;
-}
+});
 
 /**
  * Given 'data' above, perform the following tasks, logging each to the terminal.
