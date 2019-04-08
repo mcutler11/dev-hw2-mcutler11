@@ -1210,21 +1210,32 @@ const data = [
 ];
 
 // The array where every object.completed has a false value.
-const falseInstances = [];
+const falseViaWhile = [];
 
-// let i = 0;
+const falseViaForEach = [];
 
-// while (i < data.length) {
-//  if (data.completed === false) {
-//    falseInstances.push(data[i]);
-//  }
-//  i += 1; }
+let i = 0;
+
+while (i < data.length) {
+  if (data.completed === false) {
+    falseViaWhile.push(data[i]);
+  }
+  i += 1;
+}
+console.log(falseViaWhile);
 
 data.forEach(item => {
   if (data.completed === false) {
-    falseInstances.push(data[item]);
+    falseViaForEach.push(data[item]);
   }
 });
+console.log(falseViaForEach);
+
+const falseViaMap = data.map(element => element.completed === false);
+console.log(falseViaMap);
+
+const falseViaFilter = falseViaMap.filter(task => task.completed === false);
+console.log(falseViaFilter);
 
 /**
  * Given 'data' above, perform the following tasks, logging each to the terminal.
